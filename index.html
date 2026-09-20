@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="hi" data-language="hi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="भारतीय जन मोर्चा पार्टी (BJMP) — आधिकारिक वेबसाइट">
-<title>भारतीय जन मोर्चा पार्टी (BJMP)</title>
+<meta id="metaDescription" name="description" content="भारतीय जन मोर्चा पार्टी (BJMP) — आधिकारिक वेबसाइट">
+<title id="pageTitle">भारतीय जन मोर्चा पार्टी (BJMP)</title>
 <!-- Favicon -->
 
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
@@ -76,19 +76,25 @@ tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"on-error-con
 
             <i class="fa-solid fa-globe text-[10px]"></i>
 
-            <span
-              class="cursor-pointer hover:text-saffron-bright font-bold"
+            <button
+              id="hindiBtn"
+              type="button"
+              class="cursor-pointer hover:text-saffron-bright font-bold focus:outline-none"
+              aria-label="Switch to Hindi"
             >
               हिन्दी
-            </span>
+            </button>
 
             <span>/</span>
 
-            <span
-              class="cursor-pointer hover:text-saffron-bright text-surface-variant/70"
+            <button
+              id="englishBtn"
+              type="button"
+              class="cursor-pointer hover:text-saffron-bright text-surface-variant/70 focus:outline-none"
+              aria-label="Switch to English"
             >
               EN
-            </span>
+            </button>
 
           </div>
 
@@ -251,7 +257,7 @@ tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"on-error-con
 
 
         <a
-          href="https://docs.google.com/s/d/19-EQN1QxNltEqb78C_5IB_Kp_g-2LJNHBhhcXfN8c5Q/viewform?edit_requested=true&pli=1"
+          href="https://docs.google.com/forms/d/19-EQN1QxNltEqb78C_5IB_Kp_g-2LJNHBhhcXfN8c5Q/viewform?edit_requested=true&pli=1"
           class="mt-2 bg-saffron-bright text-on-primary px-4 py-3 rounded font-bold text-center"
         >
           सदस्य बनें
@@ -2021,7 +2027,7 @@ tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"on-error-con
       </span>
 
       <h2
-        class="text-3xl sm:text-4xl lg:text-5xl font-bold  uppercase  text-deep-navy-dark sm:text-sm md md:text-headline-lg"
+        class="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase text-deep-navy-dark md:text-headline-lg"
       >
         VIDEOS: जनसंवाद एवं संबोधन
       </h2>
@@ -2878,7 +2884,7 @@ tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"on-error-con
 </div>
 </section>
 
-</div></main>
+</div>
 
 
   <footer
