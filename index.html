@@ -1042,666 +1042,962 @@ tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"on-error-con
 </div>
 </div>
 <!-- Fast Registration Form Card -->
-<div class="lg:col-span-6" id="membership-form">
-<div class="bg-surface-container-lowest text-on-surface p-6 sm:p-8 rounded-xl shadow-xl">
-<div class="border-b pb-4 mb-6">
-<span class="font-label-caps text-xs text-primary font-bold uppercase tracking-wider">त्वरित ऑनलाइन आवेदन</span>
-<h3 class="font-headline-sm text-headline-sm text-deep-navy-dark">सदस्य बनने के लिए यहाँ जानकारी भरें</h3>
-</div>
-<form class="space-y-4" onsubmit="event.preventDefault(); alert('धन्यवाद! आपका सदस्यता अनुरोध प्राप्त हो गया है। जल्द ही आपका डिजिटल आईडी कार्ड जारी किया जाएगा।');">
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div>
-<label class="block font-title-md text-body-sm text-on-surface-variant mb-1">पूरा नाम (Full Name) *</label>
-<input class="w-full h-12 px-3.5 bg-background rounded focus:outline-none focus:ring-2 focus:ring-secondary text-body-md" placeholder="उदा. राकेश शर्मा" required="" type="text"/>
-</div>
-<div>
-<label class="block font-title-md text-body-sm text-on-surface-variant mb-1">मोबाइल नंबर (WhatsApp No.) *</label>
-<input class="w-full h-12 px-3.5 bg-background rounded focus:outline-none focus:ring-2 focus:ring-secondary text-body-md" placeholder="10 अंकों का मोबाइल नंबर" required="" type="tel"/>
-</div>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div>
-<label class="block font-title-md text-body-sm text-on-surface-variant mb-1">राज्य (State) *</label>
-<select class="w-full h-12 px-3.5 bg-background rounded focus:outline-none focus:ring-2 focus:ring-secondary text-body-md text-on-surface" required="">
-<option value="">राज्य चुनें...</option>
-<option value="UP">उत्तर प्रदेश</option>
-<option value="MP">मध्य प्रदेश</option>
-<option value="CG">छत्तीसगढ़</option>
-<option value="BIHAR">बिहार</option>
-<option value="DELHI">दिल्ली</option>
-<option value="OTHER">अन्य राज्य</option>
-</select>
-</div>
-<div>
-<label class="block font-title-md text-body-sm text-on-surface-variant mb-1">जिला / तहसील (District) *</label>
-<input class="w-full h-12 px-3.5 bg-background rounded focus:outline-none focus:ring-2 focus:ring-secondary text-body-md" placeholder="जिले का नाम लिखें" required="" type="text"/>
-</div>
-</div>
-<div class="flex items-start gap-2.5 pt-2">
-<input class="mt-1 w-4 h-4 rounded text-primary focus:ring-primary" id="mem-agree" required="" type="checkbox"/>
-<label class="text-body-sm text-on-surface-variant" for="mem-agree">
-                  मैं पार्टी के संविधान, संकल्पों एवं मार्गदर्शक सिद्धांतों से सहमत हूँ और स्वेच्छा से BJMP की प्राथमिक सदस्यता स्वीकार करता/करती हूँ।
-                </label>
-</div>
-<button class="w-full bg-saffron-bright hover:bg-primary text-on-primary font-label-action text-label-action py-3.5 rounded transition-all shadow-md flex items-center justify-center gap-2" type="submit">
-<span>सदस्य बनने के लिए यहाँ क्लिक करें</span>
-<i class="fa-solid fa-arrow-right text-sm"></i>
-</button>
-</form>
-</div>
+<!-- ============================================================
+     MEMBERSHIP PROCESS CARD
+     ============================================================ -->
+
+<div class="lg:col-span-6">
+
+  <div
+    class="relative
+           bg-surface-container-lowest
+           text-on-surface
+           rounded-2xl
+           shadow-xl
+           border border-white/10
+           overflow-hidden"
+  >
+
+    <!-- Top Accent -->
+
+    <div
+      class="h-1.5
+             bg-saffron-bright"
+    ></div>
+
+
+    <!-- Card Content -->
+
+    <div class="p-6 sm:p-8">
+
+
+      <!-- ======================================================
+           HEADER
+           ====================================================== -->
+
+      <div
+        class="flex items-center
+               justify-between
+               gap-4
+               mb-7"
+      >
+
+        <div>
+
+          <span
+            class="font-label-caps
+                   text-xs
+                   text-primary
+                   font-bold
+                   uppercase
+                   tracking-wider"
+          >
+            सदस्यता प्रक्रिया
+          </span>
+
+          <h3
+            class="font-headline-sm
+                   text-headline-sm
+                   text-deep-navy-dark
+                   mt-1"
+          >
+            BJMP से जुड़ने के चरण
+          </h3>
+
+        </div>
+
+
+        <!-- Icon -->
+
+        <div
+          class="w-14 h-14
+                 shrink-0
+                 rounded-2xl
+                 bg-saffron-tint
+                 flex items-center
+                 justify-center"
+        >
+
+          <i
+            class="fa-solid fa-user-plus
+                   text-primary
+                   text-xl"
+          ></i>
+
+        </div>
+
+      </div>
+
+
+      <!-- ======================================================
+           STEPS GRID
+           ====================================================== -->
+
+      <div
+        class="grid
+               grid-cols-1
+               sm:grid-cols-2
+               gap-4"
+      >
+
+
+        <!-- STEP 01 -->
+
+        <div
+          class="group
+                 p-4
+                 rounded-xl
+                 bg-background
+                 border border-slate-200
+                 hover:border-primary/30
+                 hover:shadow-sm
+                 transition-all"
+        >
+
+          <div
+            class="flex items-center
+                   justify-between
+                   mb-4"
+          >
+
+            <div
+              class="w-10 h-10
+                     rounded-lg
+                     bg-saffron-tint
+                     text-primary
+                     flex items-center
+                     justify-center
+                     font-bold"
+            >
+              01
+            </div>
+
+            <i
+              class="fa-solid fa-arrow-right
+                     text-slate-300
+                     group-hover:text-primary
+                     transition-colors"
+            ></i>
+
+          </div>
+
+          <h4
+            class="font-title-md
+                   text-title-md
+                   text-deep-navy-dark"
+          >
+            ऑनलाइन आवेदन
+          </h4>
+
+          <p
+            class="text-xs
+                   text-on-surface-variant
+                   mt-1.5
+                   leading-relaxed"
+          >
+            सदस्यता के लिए आवश्यक जानकारी आवेदन प्रक्रिया
+            के माध्यम से दर्ज करें।
+          </p>
+
+        </div>
+
+
+        <!-- STEP 02 -->
+
+        <div
+          class="group
+                 p-4
+                 rounded-xl
+                 bg-background
+                 border border-slate-200
+                 hover:border-primary/30
+                 hover:shadow-sm
+                 transition-all"
+        >
+
+          <div
+            class="flex items-center
+                   justify-between
+                   mb-4"
+          >
+
+            <div
+              class="w-10 h-10
+                     rounded-lg
+                     bg-saffron-tint
+                     text-primary
+                     flex items-center
+                     justify-center
+                     font-bold"
+            >
+              02
+            </div>
+
+            <i
+              class="fa-solid fa-arrow-right
+                     text-slate-300
+                     group-hover:text-primary
+                     transition-colors"
+            ></i>
+
+          </div>
+
+          <h4
+            class="font-title-md
+                   text-title-md
+                   text-deep-navy-dark"
+          >
+            विवरण सत्यापन
+          </h4>
+
+          <p
+            class="text-xs
+                   text-on-surface-variant
+                   mt-1.5
+                   leading-relaxed"
+          >
+            प्रस्तुत जानकारी का आवश्यक संगठनात्मक
+            सत्यापन किया जाएगा।
+          </p>
+
+        </div>
+
+
+        <!-- STEP 03 -->
+
+        <div
+          class="group
+                 p-4
+                 rounded-xl
+                 bg-background
+                 border border-slate-200
+                 hover:border-primary/30
+                 hover:shadow-sm
+                 transition-all"
+        >
+
+          <div
+            class="flex items-center
+                   justify-between
+                   mb-4"
+          >
+
+            <div
+              class="w-10 h-10
+                     rounded-lg
+                     bg-saffron-tint
+                     text-primary
+                     flex items-center
+                     justify-center
+                     font-bold"
+            >
+              03
+            </div>
+
+            <i
+              class="fa-solid fa-arrow-right
+                     text-slate-300
+                     group-hover:text-primary
+                     transition-colors"
+            ></i>
+
+          </div>
+
+          <h4
+            class="font-title-md
+                   text-title-md
+                   text-deep-navy-dark"
+          >
+            सदस्यता पुष्टि
+          </h4>
+
+          <p
+            class="text-xs
+                   text-on-surface-variant
+                   mt-1.5
+                   leading-relaxed"
+          >
+            सत्यापन प्रक्रिया पूरी होने के बाद सदस्यता
+            की पुष्टि की जाएगी।
+          </p>
+
+        </div>
+
+
+        <!-- STEP 04 -->
+
+        <div
+          class="group
+                 p-4
+                 rounded-xl
+                 bg-background
+                 border border-slate-200
+                 hover:border-primary/30
+                 hover:shadow-sm
+                 transition-all"
+        >
+
+          <div
+            class="flex items-center
+                   justify-between
+                   mb-4"
+          >
+
+            <div
+              class="w-10 h-10
+                     rounded-lg
+                     bg-saffron-tint
+                     text-primary
+                     flex items-center
+                     justify-center
+                     font-bold"
+            >
+              04
+            </div>
+
+            <i
+              class="fa-solid fa-id-card
+                     text-slate-300
+                     group-hover:text-primary
+                     transition-colors"
+            ></i>
+
+          </div>
+
+          <h4
+            class="font-title-md
+                   text-title-md
+                   text-deep-navy-dark"
+          >
+            डिजिटल पहचान
+          </h4>
+
+          <p
+            class="text-xs
+                   text-on-surface-variant
+                   mt-1.5
+                   leading-relaxed"
+          >
+            उपलब्ध होने पर डिजिटल पहचान पत्र /
+            सदस्यता कार्ड प्राप्त करें।
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- ======================================================
+           CTA AREA
+           ====================================================== -->
+
+      <div
+        class="mt-6
+               pt-5
+               border-t border-slate-200"
+      >
+
+        <div
+          class="flex flex-col
+                 sm:flex-row
+                 items-start
+                 sm:items-center
+                 justify-between
+                 gap-4"
+        >
+
+          <div>
+
+            <p
+              class="text-sm
+                     font-bold
+                     text-deep-navy-dark"
+            >
+              सदस्यता के लिए तैयार हैं?
+            </p>
+
+            <p
+              class="text-xs
+                     text-on-surface-variant
+                     mt-1"
+            >
+              ऑनलाइन आवेदन प्रक्रिया शुरू करें।
+            </p>
+
+          </div>
+
+
+          <a
+            href="https://docs.google.com/forms/d/19-EQN1QxNltEqb78C_5IB_Kp_g-2LJNHBhhcXfN8c5Q/viewform?edit_requested=true&pli=1"
+            class="inline-flex
+                   items-center
+                   justify-center
+                   gap-2
+                   bg-saffron-bright
+                   hover:bg-primary
+                   text-on-primary
+                   font-label-action
+                   text-label-action
+                   px-5
+                   py-3
+                   rounded-lg
+                   transition-all
+                   shadow-md
+                   whitespace-nowrap"
+          >
+
+            <i class="fa-solid fa-user-plus text-sm"></i>
+
+            <span>
+              सदस्यता के लिए आवेदन करें
+            </span>
+
+            <i class="fa-solid fa-arrow-right text-sm"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
 </div>
 </div>
 </section>
 <!-- CONTRIBUTION & SUPPORT PORTAL (BJMP CONTRIBUTION) -->
 <section class="w-full bg-surface py-16" id="contribution-portal">
-<div class="max-w-7xl mx-auto px-gutter space-y-10">
-<!-- Crucial Verbatim Appeal Banner -->
-<div class="bg-saffron-tint p-6 md:p-8 rounded-xl shadow-sm space-y-4">
-<div class="flex items-center gap-3">
-<div class="p-2 bg-saffron-bright text-on-primary rounded">
-<i class="fa-solid fa-bullhorn text-2xl"></i>
-</div>
-<h2 class="font-headline-sm text-headline-sm text-primary font-bold">
-            महत्वपूर्ण अपील: कृपया भुगतान करने से पहले नीचे दिया गया योगदान फॉर्म ध्यानपूर्वक भरें
-          </h2>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-          कृपया भुगतान करने से पहले नीचे दिया गया योगदान फॉर्म ध्यानपूर्वक भरें और अपनी सही जानकारी जमा करें। कृपया वही नाम दर्ज करें जो उस बैंक खाते या UPI खाते में दर्ज है, जिससे आप सहयोग कर रहे हैं। फॉर्म सफलतापूर्वक सबमिट करने के बाद नीचे दिए गए QR कोड को स्कैन करके अपना सहयोग पूरा करें। भुगतान के बाद कृपया भुगतान की तारीख और अपना Transaction ID/UTR Number सुरक्षित रखें। आपकी सही जानकारी संस्था को प्राप्त सहयोग का उचित रिकॉर्ड बनाए रखने में सहायता करेगी।
-        </p>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-  <!-- Contribution Form Column -->
-  <div class="lg:col-span-7 bg-surface-container-lowest p-6 sm:p-8 rounded-xl shadow-md space-y-6">
+  <div class="max-w-7xl mx-auto px-gutter space-y-10">
 
-    <div class="border-b pb-3">
-      <h3 class="font-title-lg text-title-lg text-deep-navy-dark">
-        सहयोग विवरण प्रपत्र (Contribution Form)
-      </h3>
+    <!-- ============================================================
+         QR + BANK DETAILS
+         Contribution Form Removed
+         ============================================================ -->
 
-      <p class="font-body-sm text-body-sm text-on-surface-variant">
-        सभी चिन्हित (*) स्थान अनिवार्य हैं
-      </p>
-    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
 
-    <!-- Contribution Form -->
-   <form
-  id="contribution-form"
-  class="space-y-4"
-  action="https://formspree.io/f/mdekazov"
-  method="POST"
->
+  <!-- ==========================================================
+       LEFT SIDE — QR SECTION
+       ========================================================== -->
 
-      <!-- Full Name -->
-      <div>
-        <label class="block font-title-md text-body-sm text-on-surface mb-1">
-          Full Name (पूरा नाम बैंक खाते के अनुसार)*
-        </label>
+ <!-- ============================================================
+     LEFT SIDE — UPI QR CODE SECTION
+     ============================================================ -->
 
-        <input
-          id="full-name"
-          name="full_name"
-          class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md"
-          placeholder="बैंक या UPI खाते में दर्ज आधिकारिक नाम"
-          required
-          type="text"
-        />
-      </div>
+<div class="space-y-5" id="upi-qr-card">
 
-
-      <!-- Mobile & Date -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-        <!-- Mobile -->
-        <div>
-          <label class="block font-title-md text-body-sm text-on-surface mb-1">
-            Mobile Number (मोबाइल नंबर)*
-          </label>
-
-          <input
-            id="mobile"
-            name="mobile"
-            class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md"
-            placeholder="10-digit mobile number"
-            pattern="[0-9]{10}"
-            maxlength="10"
-            required
-            type="tel"
-          />
-        </div>
-
-        <!-- Payment Date -->
-        <div>
-          <label class="block font-title-md text-body-sm text-on-surface mb-1">
-            Payment Date (भुगतान की तारीख)*
-          </label>
-
-          <input
-            id="payment-date"
-            name="payment_date"
-            class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md text-on-surface"
-            required
-            type="date"
-          />
-        </div>
-
-      </div>
-
-
-      <!-- Complete Address -->
-      <div>
-        <label class="block font-title-md text-body-sm text-on-surface mb-1">
-          Complete Address (पूर्ण स्थायी पता)*
-        </label>
-
-        <input
-          id="address"
-          name="address"
-          class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md"
-          placeholder="मकान सं., गली/ग्राम, मोहल्ला"
-          required
-          type="text"
-        />
-      </div>
-
-
-      <!-- State, District, PIN -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-
-        <!-- State -->
-        <div>
-          <label class="block font-title-md text-body-sm text-on-surface mb-1">
-            State (राज्य)*
-          </label>
-
-          <input
-            id="state"
-            name="state"
-            class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md"
-            placeholder="उदा. मध्य प्रदेश"
-            required
-            type="text"
-          />
-        </div>
-
-
-        <!-- District -->
-        <div>
-          <label class="block font-title-md text-body-sm text-on-surface mb-1">
-            District (जिला)*
-          </label>
-
-          <input
-            id="district"
-            name="district"
-            class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md"
-            placeholder="उदा. सतना"
-            required
-            type="text"
-          />
-        </div>
-
-
-        <!-- PIN -->
-        <div>
-          <label class="block font-title-md text-body-sm text-on-surface mb-1">
-            PIN Code (पिन कोड)*
-          </label>
-
-          <input
-            id="pin"
-            name="pin"
-            class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md"
-            pattern="[0-9]{6}"
-            maxlength="6"
-            placeholder="6-अंक पिन"
-            required
-            type="text"
-          />
-        </div>
-
-      </div>
-
-
-      <!-- Contribution Amount -->
-      <div>
-
-        <label class="block font-title-md text-body-sm text-on-surface mb-2">
-          Contribution Amount (सहयोग राशि)*
-        </label>
-
-        <!-- Quick Amount Buttons -->
-        <div class="grid grid-cols-3 sm:grid-cols-5 gap-2 mb-3">
-
-          <button
-            type="button"
-            onclick="setAmount(100)"
-            class="py-2 text-center rounded bg-background hover:bg-saffron-tint hover:text-primary font-bold text-body-md transition-colors">
-            ₹100
-          </button>
-
-          <button
-            type="button"
-            onclick="setAmount(500)"
-            class="py-2 text-center rounded bg-background hover:bg-saffron-tint hover:text-primary font-bold text-body-md transition-colors">
-            ₹500
-          </button>
-
-          <button
-            type="button"
-            onclick="setAmount(1000)"
-            class="py-2 text-center rounded bg-saffron-tint text-primary font-bold text-body-md transition-colors">
-            ₹1000
-          </button>
-
-          <button
-            type="button"
-            onclick="setAmount(2100)"
-            class="py-2 text-center rounded bg-background hover:bg-saffron-tint hover:text-primary font-bold text-body-md transition-colors">
-            ₹2100
-          </button>
-
-          <button
-            type="button"
-            onclick="setAmount(5000)"
-            class="py-2 text-center rounded bg-background hover:bg-saffron-tint hover:text-primary font-bold text-body-md transition-colors">
-            ₹5000
-          </button>
-
-        </div>
-
-
-        <!-- Custom Amount -->
-        <input
-          id="amount-input"
-          name="amount"
-          class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md font-bold"
-          min="50"
-          placeholder="अन्य राशि प्रविष्ट करें (₹)"
-          required
-          type="number"
-          value="1000"
-        />
-
-      </div>
-
-
-      <!-- Disclaimer -->
-      <div class="bg-background p-4 rounded space-y-3 text-body-sm text-on-surface-variant">
-
-        <p class="font-bold text-on-surface">
-          "मैं पुष्टि करता/करती हूँ कि यह योगदान मैं अपनी स्वेच्छा से,
-          बिना किसी दबाव या बाध्यता के दे रहा/रही हूँ। मैं स्वीकार करता/करती हूँ
-          कि भुगतान संबंधी जानकारी सही है।"
-        </p>
-
-
-        <div class="flex items-center gap-6 pt-1">
-
-          <label class="flex items-center gap-2 cursor-pointer font-title-md text-on-surface">
-
-            <input
-              class="w-4 h-4 text-primary focus:ring-primary"
-              name="voluntary-consent"
-              value="yes"
-              required
-              type="radio"
-            />
-
-            <span>हाँ, मैं सहमत हूँ</span>
-
-          </label>
-
-
-          <label class="flex items-center gap-2 cursor-pointer font-title-md text-on-surface">
-
-            <input
-              class="w-4 h-4 text-primary focus:ring-primary"
-              name="voluntary-consent"
-              value="no"
-              type="radio"
-            />
-
-            <span>नहीं, मैं सहमत नहीं हूँ</span>
-
-          </label>
-
-        </div>
-
-      </div>
-
-
-      <!-- Submit -->
-      <button
-        class="w-full bg-deep-navy-dark hover:bg-secondary text-on-primary font-label-action text-label-action py-3.5 rounded transition-all shadow-md flex items-center justify-center gap-2"
-        type="submit"
-      >
-
-        <i class="fa-solid fa-paper-plane text-base"></i>
-
-        <span>
-          Submit Form (फॉर्म सबमिट करें)
-        </span>
-
-      </button>
-
-    </form>
-
-  </div>
-<!-- QR Code & Official Banking Credentials Column -->
-<div class="lg:col-span-5 space-y-6" id="upi-qr-card">
-<!-- UPI QR Card -->
-<div class="bg-surface-container-lowest p-6 rounded-xl shadow-md text-center space-y-4">
-<div class="inline-flex items-center gap-2 px-3 py-1 bg-saffron-tint rounded text-primary text-xs font-label-caps font-bold">
-<i class="fa-solid fa-qrcode text-sm"></i>
-<span>आधिकारिक UPI भुगतान QR कोड</span>
-</div>
-<h4 class="font-title-lg text-title-lg text-deep-navy-dark">स्कैन करके सहयोग राशि भेजें</h4>
-<!-- ============================= -->
-<!-- UPI CONTRIBUTION / PAYMENT -->
-<!-- ============================= -->
-
-<div class="space-y-5">
-
-  <!-- Section Label -->
-  <div class="text-center space-y-1">
-
-    <span
-      class="font-label-caps text-label-caps
-             text-secondary uppercase
-             tracking-wider font-bold"
-    >
-      डिजिटल सहयोग
-    </span>
-
-    <h3
-      class="font-headline-md text-headline-md
-             text-deep-navy-dark"
-    >
-      सहयोग राशि दें
-    </h3>
-
-    <p
-      class="font-body-sm text-body-sm
-             text-on-surface-variant
-             max-w-md mx-auto"
-    >
-      भारतीय जन मोर्चा पार्टी को डिजिटल माध्यम से
-      सहयोग राशि प्रदान करें।
-    </p>
-
-  </div>
-
-
-  <!-- ============================= -->
-  <!-- PAYMENT CARD -->
-  <!-- ============================= -->
+  <!-- UPI QR Card -->
 
   <div
-    class="w-full max-w-md mx-auto
-           bg-white
-           rounded-2xl
-           border border-gray-200
-           shadow-lg
-           overflow-hidden"
+    class="bg-surface-container-lowest
+           p-5 rounded-xl shadow-md
+           text-center space-y-3"
   >
 
-    <!-- ============================= -->
-    <!-- UNION BANK -->
-    <!-- ============================= -->
+    <!-- QR LABEL -->
 
     <div
-      class="px-6 pt-6 pb-3
-             flex justify-center"
+      class="inline-flex items-center gap-2
+             px-3 py-1
+             bg-saffron-tint
+             rounded
+             text-primary
+             text-xs
+             font-label-caps
+             font-bold"
     >
 
-      <img
-        src="/assets/unionbank.png"
-        alt="Union Bank of India"
-        class="w-56 sm:w-64
-               h-auto
-               object-contain"
-      />
+      <i class="fa-solid fa-qrcode text-sm"></i>
+
+      <span>
+        आधिकारिक UPI भुगतान QR कोड
+      </span>
 
     </div>
 
 
-    <!-- ============================= -->
-    <!-- ANDHRA BANK + CORPORATION -->
-    <!-- ============================= -->
+    <!-- MAIN HEADING -->
 
-    <div
-      class="px-6 py-2"
+    <h4
+      class="font-title-lg
+             text-title-lg
+             text-deep-navy-dark"
     >
+      स्कैन करके सहयोग राशि भेजें
+    </h4>
 
-      <div
-        class="flex items-center
-               justify-center
-               gap-3 sm:gap-5"
-      >
 
-        <!-- Andhra Bank -->
-        <div
-          class="flex-1
-                 h-18 sm:h-14
-                 flex items-center
-                 justify-center"
+    <!-- ========================================================
+         UPI CONTRIBUTION / PAYMENT
+         ======================================================== -->
+
+    <div class="space-y-4">
+
+      <!-- Section Label -->
+
+      <div class="text-center space-y-1">
+
+        <span
+          class="font-label-caps
+                 text-label-caps
+                 text-secondary
+                 uppercase
+                 tracking-wider
+                 font-bold"
         >
-
-          <img
-            src="./assets/andhra-corporation.png"
-            alt="Andhra Bank"
-            class="max-w-full
-                  max-h-50%
-                   object-contain"
-          />
-
-        </div>
+          डिजिटल सहयोग
+        </span>
 
 
-       
-
-
-        <!-- Corporation Bank
-        <div
-          class="flex-1
-                 h-12 sm:h-14
-                 flex items-center
-                 justify-center"
+        <h3
+          class="font-headline-md
+                 text-headline-md
+                 text-deep-navy-dark"
         >
+          सहयोग राशि दें
+        </h3>
 
-          <img
-            src="./assets/corporation-bank.png"
-            alt="Corporation Bank"
-            class="max-w-full
-                   max-h-full
-                   object-contain"
-          />
 
-        </div> -->
+        <p
+          class="font-body-sm
+                 text-body-sm
+                 text-on-surface-variant
+                 max-w-md
+                 mx-auto"
+        >
+          भारतीय जन मोर्चा पार्टी को डिजिटल माध्यम से
+          सहयोग राशि प्रदान करें।
+        </p>
 
       </div>
 
-    </div>
 
-
-    <!-- ============================= -->
-    <!-- PARTY INFORMATION -->
-    <!-- ============================= -->
-
-    <div
-      class="px-6 pt-3 pb-4
-             text-center"
-    >
-
-      <p
-        class="text-sm sm:text-base
-               font-bold
-               text-gray-800
-               uppercase
-               tracking-wide"
-      >
-        BHARATIYA JAN MORCHA PARTY
-      </p>
-
-      <p
-        class="text-xs sm:text-sm
-               text-gray-500
-               mt-1
-               font-mono
-               break-all"
-      >
-        QRS192492329024-0333@unionbankofindia
-      </p>
-
-    </div>
-
-
-    <!-- ============================= -->
-    <!-- QR CODE -->
-    <!-- ============================= -->
-
-    <div
-      class="px-6 pb-5"
-    >
+      <!-- ========================================================
+           PAYMENT CARD
+           ======================================================== -->
 
       <div
         class="w-full
-               max-w-[290px]
-               aspect-square
+               max-w-sm
                mx-auto
                bg-white
-               flex items-center
-               justify-center"
+               rounded-2xl
+               border border-gray-200
+               shadow-lg
+               overflow-hidden"
       >
 
-        <img
-          src="/assets/QRcode.png"
-          alt="BJMP UPI Payment QR Code"
-          class="w-full h-full
-                 object-contain"
-        />
+        <!-- ======================================================
+             UNION BANK
+             ====================================================== -->
+
+        <div
+          class="px-5 pt-4 pb-2
+                 flex justify-center"
+        >
+
+          <img
+            src="/assets/unionbank.png"
+            alt="Union Bank of India"
+            class="w-44 sm:w-52
+                   h-auto
+                   object-contain"
+          />
+
+        </div>
+
+
+        <!-- ======================================================
+             ANDHRA BANK + CORPORATION
+             ====================================================== -->
+
+        <div class="px-5 py-1">
+
+          <div
+            class="flex items-center
+                   justify-center
+                   gap-3 sm:gap-5"
+          >
+
+            <div
+              class="flex-1
+                     h-12 sm:h-14
+                     flex items-center
+                     justify-center"
+            >
+
+              <img
+                src="./assets/andhra-corporation.png"
+                alt="Andhra Bank and Corporation Bank"
+                class="max-w-full
+                       max-h-full
+                       object-contain"
+              />
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ======================================================
+             PARTY INFORMATION
+             ====================================================== -->
+
+        <div
+          class="px-5 pt-2 pb-3
+                 text-center"
+        >
+
+          <p
+            class="text-sm sm:text-base
+                   font-bold
+                   text-gray-800
+                   uppercase
+                   tracking-wide"
+          >
+            BHARATIYA JAN MORCHA PARTY
+          </p>
+
+
+          <p
+            class="text-xs sm:text-sm
+                   text-gray-500
+                   mt-1
+                   font-mono
+                   break-all"
+          >
+            QRS192492329024-0333@unionbankofindia
+          </p>
+
+        </div>
+
+
+        <!-- ======================================================
+             QR CODE
+             ====================================================== -->
+
+        <div class="px-5 pb-3">
+
+          <div
+            class="w-full
+                   max-w-[220px]
+                   aspect-square
+                   mx-auto
+                   bg-white
+                   flex items-center
+                   justify-center"
+          >
+
+            <img
+              src="/assets/QRcode.png"
+              alt="BJMP UPI Payment QR Code"
+              class="w-full
+                     h-full
+                     object-contain"
+            />
+
+          </div>
+
+        </div>
+
+
+        <!-- ======================================================
+             BHIM / UPI LOGO
+             ====================================================== -->
+
+        <div
+          class="px-5 pb-4
+                 flex justify-center"
+        >
+
+          <img
+            src="/assets/bhimupi.png"
+            alt="BHIM UPI"
+            class="w-40 sm:w-48
+                   h-auto
+                   object-contain"
+          />
+
+        </div>
+
+      </div>
+
+
+      <!-- ========================================================
+           PAYMENT NOTE
+           ======================================================== -->
+
+      <div
+        class="max-w-md
+               mx-auto
+               flex items-start
+               gap-2
+               px-3"
+      >
+
+        <i
+          class="fa-solid fa-circle-info
+                 text-primary
+                 text-base
+                 mt-0.5"
+        ></i>
+
+
+        <p
+          class="text-xs
+                 text-on-surface-variant
+                 leading-relaxed"
+        >
+          QR कोड स्कैन करके अपनी सुविधानुसार सहयोग राशि
+          भेजें। भुगतान करने से पहले प्रदर्शित प्राप्तकर्ता
+          नाम और UPI विवरण की पुष्टि करें।
+        </p>
 
       </div>
 
     </div>
 
+  </div>
 
-    <!-- ============================= -->
-    <!-- BHIM / UPI LOGO -->
-    <!-- ============================= -->
+</div>
+
+
+  <!-- ==========================================================
+       RIGHT SIDE — APPEAL + BANK DETAILS
+       ========================================================== -->
+
+  <div class="space-y-6">
+
+    <!-- IMPORTANT APPEAL -->
 
     <div
-      class="px-6 pb-5
-             flex justify-center"
+      class="bg-saffron-tint
+             p-5 md:p-6
+             rounded-xl
+             shadow-sm
+             space-y-4"
     >
 
-      <img
-        src="/assets/bhimupi.png"
-        alt="BHIM UPI"
-        class="w-56 sm:w-64
-               h-auto
-               object-contain"
-      />
+      <div class="flex items-center gap-3">
 
+        <div
+          class="p-2
+                 bg-saffron-bright
+                 text-on-primary
+                 rounded"
+        >
+
+          <i class="fa-solid fa-bullhorn text-xl"></i>
+
+        </div>
+
+
+        <h2
+          class="font-headline-sm
+                 text-headline-sm
+                 text-primary
+                 font-bold"
+        >
+          महत्वपूर्ण अपील
+        </h2>
+
+      </div>
+
+
+      <p
+        class="font-body-md
+               text-body-md
+               text-on-surface-variant
+               leading-relaxed"
+      >
+        कृपया भुगतान करने से पहले नीचे दिया गया योगदान
+        फॉर्म ध्यानपूर्वक भरें और अपनी सही जानकारी जमा करें।
+        कृपया वही नाम दर्ज करें जो उस बैंक खाते या UPI खाते
+        में दर्ज है, जिससे आप सहयोग कर रहे हैं। फॉर्म
+        सफलतापूर्वक सबमिट करने के बाद नीचे दिए गए QR कोड को
+        स्कैन करके अपना सहयोग पूरा करें। भुगतान के बाद कृपया
+        भुगतान की तारीख और अपना Transaction ID/UTR Number
+        सुरक्षित रखें। आपकी सही जानकारी संस्था को प्राप्त
+        सहयोग का उचित रिकॉर्ड बनाए रखने में सहायता करेगी।
+      </p>
+<a
+  href="https://docs.google.com/forms/d/e/1FAIpQLSdYC4pj3RAnk7-TJJGhS_cAje670thyAeAUvBsrMS_SYC9GLA/viewform"
+  class="inline-flex items-center justify-center gap-2
+         bg-deep-navy-dark
+         hover:bg-secondary
+         text-white
+         font-bold
+         px-5 py-3
+         rounded-lg
+         shadow-md
+         transition-all duration-300"
+>
+  <i class="fa-solid fa-hand-holding-heart"></i>
+
+  <span>
+    सहयोग करें
+  </span>
+</a>
     </div>
 
 
-    <!-- ============================= -->
-    <!-- PAYMENT FOOTER -->
-    <!-- ============================= -->
-<!-- 
+    <!-- ========================================================
+         EXISTING BANK DETAILS
+         ======================================================== -->
+
     <div
-      class="border-t border-gray-100
-             bg-gray-50
-             px-5 py-4
-             text-center"
+      class="bg-parchment-surface
+             p-6
+             rounded-xl
+             shadow-sm
+             space-y-3"
     >
 
-      <p
-        class="text-sm
-               text-gray-700
-               font-mono
+      <h4
+        class="font-title-md
+               text-title-md
+               text-deep-navy-dark
+               flex items-center
+               gap-2"
+      >
+
+        <i
+          class="fa-solid fa-building-columns
+                 text-secondary"
+        ></i>
+
+        <span>
+          पार्टी का केंद्रीय बैंक खाता विवरण
+        </span>
+
+      </h4>
+
+
+      <div
+        class="space-y-2
+               font-body-sm
+               text-body-sm
+               text-on-surface-variant"
+      >
+
+        <div
+          class="flex justify-between
+                 py-1
+                 border-b"
+        >
+
+          <span>
+            खाता धारक (Account Name):
+          </span>
+
+          <span
+            class="font-bold
+                   text-deep-navy-dark"
+          >
+            Bharatiya Jan Morcha Party
+          </span>
+
+        </div>
+
+
+        <div
+          class="flex justify-between
+                 py-1
+                 border-b"
+        >
+
+          <span>
+            बैंक का नाम (Bank):
+          </span>
+
+          <span
+            class="font-bold
+                   text-deep-navy-dark"
+          >
+            Union Bank Of India
+          </span>
+
+        </div>
+
+
+        <div
+          class="flex justify-between
+                 py-1
+                 border-b"
+        >
+
+          <span>
+            खाता संख्या (Account No):
+          </span>
+
+          <span
+            class="font-bold
+                   text-deep-navy-dark
+                   font-mono"
+          >
+            636901010050333
+          </span>
+
+        </div>
+
+
+        <div
+          class="flex justify-between
+                 py-1"
+        >
+
+          <span>
+            IFSC कोड (IFSC Code):
+          </span>
+
+          <span
+            class="font-bold
+                   text-deep-navy-dark
+                   font-mono"
+          >
+            UBIN0563692
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="pt-2
+               text-xs
+               text-primary
                font-semibold
-               break-all"
+               flex items-center
+               gap-1.5"
       >
-        UPI ID: bjmp.central@sbi
-      </p>
 
-      <p
-        class="text-xs
-               text-gray-500
-               mt-1.5"
-      >
-        BHIM, Google Pay, PhonePe एवं Paytm समर्थित
-      </p>
+        <i
+          class="fa-solid fa-circle-info
+                 text-sm"
+        ></i>
 
-    </div> -->
+        <span>
+          कृपया भुगतान पश्चात UTR रसीद
+          1800-BJMP-INDIA पर साझा करें।
+        </span>
 
-  </div>
+      </div>
 
-
-  <!-- ============================= -->
-  <!-- PAYMENT NOTE -->
-  <!-- ============================= -->
-
-  <div
-    class="max-w-md mx-auto
-           flex items-start gap-2
-           px-4"
-  >
-
-    <i
-      class="fa-solid fa-circle-info text-primary text-lg
-             mt-0.5"
-    ></i>
-
-    <p
-      class="text-xs
-             text-on-surface-variant
-             leading-relaxed"
-    >
-      QR कोड स्कैन करके अपनी सुविधानुसार सहयोग राशि
-      भेजें। भुगतान करने से पहले प्रदर्शित प्राप्तकर्ता
-      नाम और UPI विवरण की पुष्टि करें।
-    </p>
+    </div>
 
   </div>
 
 </div>
-<!-- Official Bank Details Module -->
-<div class="bg-parchment-surface p-6 rounded-xl shadow-sm space-y-3">
-<h4 class="font-title-md text-title-md text-deep-navy-dark flex items-center gap-2">
-<i class="fa-solid fa-building-columns text-secondary"></i>
-<span>पार्टी का केंद्रीय बैंक खाता विवरण</span>
-</h4>
-<div class="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
-<div class="flex justify-between py-1 border-b">
-<span>खाता धारक (Account Name):</span>
-<span class="font-bold text-deep-navy-dark">Bharatiya Jan Morcha Party</span>
-</div>
-<div class="flex justify-between py-1 border-b">
-<span>बैंक का नाम (Bank):</span>
-<span class="font-bold text-deep-navy-dark">Union Bank Of India</span>
-</div>
-<div class="flex justify-between py-1 border-b">
-<span>खाता संख्या (Account No):</span>
-<span class="font-bold text-deep-navy-dark font-mono">636901010050333</span>
-</div>
-<div class="flex justify-between py-1">
-<span>IFSC कोड (IFSC Code):</span>
-<span class="font-bold text-deep-navy-dark font-mono">UBIN0563692</span>
-</div>
-</div>
-<div class="pt-2 text-xs text-primary font-semibold flex items-center gap-1.5">
-<i class="fa-solid fa-circle-info text-sm"></i>
-<span>कृपया भुगतान पश्चात UTR रसीद 1800-BJMP-INDIA पर साझा करें।</span>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+  </div>
+
 </section>
 <!-- MEDIA, NEWS & GALLERY SECTION (VIDEOS, NEWS & GALLERY) -->
 <section class="w-full bg-surface-container-low py-16">
