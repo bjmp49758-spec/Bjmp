@@ -291,41 +291,54 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
 
-  /*
-   * ============================================================
-   * RENDER VIDEOS
-   * ============================================================
-   */
+/*
+ * ============================================================
+ * RENDER VIDEOS
+ * ============================================================
+ */
 
-  function renderBJMPVideos() {
+function renderBJMPVideos() {
+  const rail = document.getElementById("videoRail");
 
-    const rail = document.getElementById("videoRail");
+  // Safety check
+  if (!rail) {
+    console.error("BJMP: #videoRail element was not found.");
+    return;
+  }
 
-    rail.innerHTML = bjmpVideos.map((video) => {
+  if (!Array.isArray(bjmpVideos) || bjmpVideos.length === 0) {
+    console.warn("BJMP: No videos found in bjmpVideos.");
+    rail.innerHTML = `
+      <div class="w-full py-10 text-center text-slate-500">
+        No videos available.
+      </div>
+    `;
+    return;
+  }
 
+  rail.innerHTML = bjmpVideos
+    .map((video) => {
       let thumbnail = "";
 
       if (video.type === "youtube") {
-
-        thumbnail =
-          `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
-
+        thumbnail = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
       } else {
-
-        thumbnail = video.poster;
-
+        thumbnail = video.poster || "";
       }
 
+      const source =
+        video.type === "youtube"
+          ? video.id
+          : video.src;
 
       return `
-
         <button
           type="button"
-          class="video-card group text-left"
+          class="video-card group text-left flex-none w-[300px] md:w-[340px] snap-start"
           onclick="openBJMPVideo(
             '${video.type}',
-            '${video.type === "youtube" ? video.id : video.src}',
-            '${video.title}'
+            '${source}',
+            '${String(video.title).replace(/'/g, "\\'")}'
           )"
         >
 
@@ -334,7 +347,6 @@ document.addEventListener("DOMContentLoaded", () => {
           >
 
             <!-- THUMBNAIL -->
-
             <div
               class="relative aspect-video overflow-hidden bg-deep-navy-dark"
             >
@@ -344,18 +356,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 alt="${video.title}"
                 loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onerror="this.src='https://placehold.co/640x360/001B44/FFFFFF?text=BJMP+Video'"
               />
 
-
               <!-- Hover overlay -->
-
               <div
                 class="absolute inset-0 bg-black/5 group-hover:bg-black/25 transition-colors"
               ></div>
 
-
-              <!-- Play -->
-
+              <!-- Play button -->
               <div
                 class="absolute inset-0 flex items-center justify-center"
               >
@@ -363,27 +372,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div
                   class="w-12 h-12 rounded-full bg-white/95 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
                 >
-
-                  <i class="fa-solid fa-play text-deep-navy-dark text-2xl ml-0.5"></i>
-
+                  <i
+                    class="fa-solid fa-play text-deep-navy-dark text-xl ml-0.5"
+                  ></i>
                 </div>
 
               </div>
 
-
               <!-- Category -->
-
               <div
                 class="absolute bottom-3 left-3 bg-deep-navy-dark/90 text-white text-[10px] px-2.5 py-1 rounded uppercase tracking-wider font-bold"
               >
-                ${video.category}
+                ${video.category || "VIDEO"}
               </div>
 
             </div>
 
-
             <!-- CONTENT -->
-
             <div class="p-4">
 
               <h4
@@ -397,12 +402,14 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
 
         </button>
-
       `;
+    })
+    .join("");
 
-    }).join("");
-
-  }
+  console.log(
+    `BJMP: ${bjmpVideos.length} videos rendered successfully.`
+  );
+}
 
 
   /*
@@ -549,7 +556,9 @@ document.addEventListener("DOMContentLoaded", () => {
    * INITIALIZE
    */
 
+ document.addEventListener("DOMContentLoaded", () => {
   renderBJMPVideos();
+});
 
 
 
@@ -614,40 +623,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
       });
 
-/* ============================================
-   CONTRIBUTION FORM → GOOGLE FORM
-============================================= */
 
-function setAmount(amount) {
-  const amountInput = document.getElementById("amount-input");
-
-  if (amountInput) {
-    amountInput.value = amount;
-  }
-}
-
-
-// function openGoogleForm(event) {
-
-//   event.preventDefault();
-
-//   const form = document.getElementById("contribution-form");
-
-//   if (!form) {
-//     console.error("Contribution form not found.");
-//     return;
-//   }
-
-//   // Check required fields
-//   if (!form.checkValidity()) {
-//     form.reportValidity();
-//     return;
-//   }
-
-//   // Your Google Form
-//   const googleFormURL =
-//     "https://forms.gle/EykxuR6adShG21Qq8";
-
-//   // Open Google Form
-//   window.open(googleFormURL, "_blank");
-}
