@@ -1,0 +1,166 @@
+/* BJMP Political Party Portal
+   Visual CSS extracted from the supplied design.
+   Tailwind utility classes remain in the HTML so the UI/UX stays visually identical.
+*/
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    overscroll-behavior: none;
+  }
+
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes bjmp-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  width: max-content;
+  animation: bjmp-marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+[id] {
+  scroll-margin-top: 110px;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+ #mobileMenu {
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    #mobileMenu.hidden-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      pointer-events: none;
+    }
+
+    #mobileMenu.show-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+@media (min-width: 1280px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-marquee {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+
+  /* Video navigation buttons */
+
+  .video-nav-btn {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #d8dde5;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #172554;
+    background: white;
+    transition: all 0.25s ease;
+  }
+
+  .video-nav-btn:hover {
+    background: #172554;
+    color: white;
+    border-color: #172554;
+  }
+
+
+  /* Hide scrollbar */
+
+  .video-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .video-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  /* Video card */
+
+  .video-card {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
+
+  @media (min-width: 640px) {
+
+    .video-card {
+      flex-basis: 48%;
+    }
+
+  }
+
+  @media (min-width: 1024px) {
+
+    .video-card {
+      flex-basis: 31%;
+    }
+
+  }
+
+  @media (min-width: 1280px) {
+
+    .video-card {
+      flex-basis: 28%;
+    }
+
+  }
+
+
