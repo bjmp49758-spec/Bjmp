@@ -251,7 +251,7 @@ tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"on-error-con
 
 
         <a
-          href="https://docs.google.com/forms/d/19-EQN1QxNltEqb78C_5IB_Kp_g-2LJNHBhhcXfN8c5Q/viewform?edit_requested=true&pli=1"
+          href="https://docs.google.com/s/d/19-EQN1QxNltEqb78C_5IB_Kp_g-2LJNHBhhcXfN8c5Q/viewform?edit_requested=true&pli=1"
           class="mt-2 bg-saffron-bright text-on-primary px-4 py-3 rounded font-bold text-center"
         >
           सदस्य बनें
@@ -1111,84 +1111,284 @@ tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"on-error-con
         </p>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-<!-- Contribution Form Column -->
-<div class="lg:col-span-7 bg-surface-container-lowest p-6 sm:p-8 rounded-xl shadow-md space-y-6">
-<div class="border-b pb-3">
-<h3 class="font-title-lg text-title-lg text-deep-navy-dark">सहयोग विवरण प्रपत्र (Contribution Form)</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">सभी चिन्हित (*) स्थान अनिवार्य हैं</p>
-</div>
-<form class="space-y-4" onsubmit="event.preventDefault(); document.getElementById('upi-qr-card').scrollIntoView({behavior: 'smooth'}); alert('फॉर्म जमा हो गया है! कृपया संलग्न UPI QR कोड अथवा बैंक विवरण द्वारा अपना अंशदान पूर्ण करें।');">
-<!-- Full Name -->
-<div>
-<label class="block font-title-md text-body-sm text-on-surface mb-1">Full Name (पूरा नाम बैंक खाते के अनुसार)*</label>
-<input class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md" placeholder="बैंक या UPI खाते में दर्ज आधिकारिक नाम" required="" type="text"/>
-</div>
-<!-- Mobile & Date -->
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div>
-<label class="block font-title-md text-body-sm text-on-surface mb-1">Mobile Number (मोबाइल नंबर)*</label>
-<input class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md" placeholder="10-digit mobile number" required="" type="tel"/>
-</div>
-<div>
-<label class="block font-title-md text-body-sm text-on-surface mb-1">Payment Date (भुगतान की तारीख)*</label>
-<input class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md text-on-surface" required="" type="date"/>
-</div>
-</div>
-<!-- Complete Address -->
-<div>
-<label class="block font-title-md text-body-sm text-on-surface mb-1">Complete Address (पूर्ण स्थायी पता)*</label>
-<input class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md" placeholder="मकान सं., गली/ग्राम, मोहल्ला" required="" type="text"/>
-</div>
-<!-- State, District, PIN -->
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-<div>
-<label class="block font-title-md text-body-sm text-on-surface mb-1">State (राज्य)*</label>
-<input class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md" placeholder="उदा. मध्य प्रदेश" required="" type="text"/>
-</div>
-<div>
-<label class="block font-title-md text-body-sm text-on-surface mb-1">District (जिला)*</label>
-<input class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md" placeholder="उदा. सतना" required="" type="text"/>
-</div>
-<div>
-<label class="block font-title-md text-body-sm text-on-surface mb-1">PIN Code (पिन कोड)*</label>
-<input class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md" pattern="[0-9]{6}" placeholder="6-अंक पिन" required="" type="text"/>
-</div>
-</div>
-<!-- Contribution Amount Quick-Picks -->
-<div>
-<label class="block font-title-md text-body-sm text-on-surface mb-2">Contribution Amount (सहयोग राशि)*</label>
-<div class="grid grid-cols-3 sm:grid-cols-5 gap-2 mb-3">
-<button class="py-2 text-center rounded bg-background hover:bg-saffron-tint hover:text-primary font-bold text-body-md transition-colors" onclick="document.getElementById('amount-input').value='100'" type="button">₹100</button>
-<button class="py-2 text-center rounded bg-background hover:bg-saffron-tint hover:text-primary font-bold text-body-md transition-colors" onclick="document.getElementById('amount-input').value='500'" type="button">₹500</button>
-<button class="py-2 text-center rounded bg-saffron-tint text-primary font-bold text-body-md transition-colors" onclick="document.getElementById('amount-input').value='1000'" type="button">₹1000</button>
-<button class="py-2 text-center rounded bg-background hover:bg-saffron-tint hover:text-primary font-bold text-body-md transition-colors" onclick="document.getElementById('amount-input').value='2100'" type="button">₹2100</button>
-<button class="py-2 text-center rounded bg-background hover:bg-saffron-tint hover:text-primary font-bold text-body-md transition-colors" onclick="document.getElementById('amount-input').value='5000'" type="button">₹5000</button>
-</div>
-<input class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md font-bold" id="amount-input" min="50" placeholder="अन्य राशि प्रविष्ट करें (₹)" required="" type="number" value="1000"/>
-</div>
-<!-- Disclaimer Checkboxes -->
-<div class="bg-background p-4 rounded space-y-3 text-body-sm text-on-surface-variant">
-<p class="font-bold text-on-surface">
-                "मैं पुष्टि करता/करती हूँ कि यह योगदान मैं अपनी स्वेच्छा से, बिना किसी दबाव या बाध्यता के दे रहा/रही हूँ। मैं स्वीकार करता/करती हूँ कि भुगतान संबंधी जानकारी सही है।"
-              </p>
-<div class="flex items-center gap-6 pt-1">
-<label class="flex items-center gap-2 cursor-pointer font-title-md text-on-surface">
-<input checked="" class="w-4 h-4 text-primary focus:ring-primary" name="voluntary-consent" required="" type="radio"/>
-<span>हाँ, मैं सहमत हूँ</span>
-</label>
-<label class="flex items-center gap-2 cursor-pointer font-title-md text-on-surface">
-<input class="w-4 h-4 text-primary focus:ring-primary" name="voluntary-consent" type="radio"/>
-<span>नहीं, मैं सहमत नहीं हूँ</span>
-</label>
-</div>
-</div>
-<!-- Submit Button -->
-<button class="w-full bg-deep-navy-dark hover:bg-secondary text-on-primary font-label-action text-label-action py-3.5 rounded transition-all shadow-md flex items-center justify-center gap-2" type="submit">
-<i class="fa-solid fa-paper-plane text-base"></i>
-<span>Submit Form (फॉर्म सबमिट करें)</span>
-</button>
-</form>
-</div>
+
+  <!-- Contribution Form Column -->
+  <div class="lg:col-span-7 bg-surface-container-lowest p-6 sm:p-8 rounded-xl shadow-md space-y-6">
+
+    <div class="border-b pb-3">
+      <h3 class="font-title-lg text-title-lg text-deep-navy-dark">
+        सहयोग विवरण प्रपत्र (Contribution Form)
+      </h3>
+
+      <p class="font-body-sm text-body-sm text-on-surface-variant">
+        सभी चिन्हित (*) स्थान अनिवार्य हैं
+      </p>
+    </div>
+
+    <!-- Contribution Form -->
+   <form
+  id="contribution-form"
+  class="space-y-4"
+  action="https://formspree.io/f/mdekazov"
+  method="POST"
+>
+
+      <!-- Full Name -->
+      <div>
+        <label class="block font-title-md text-body-sm text-on-surface mb-1">
+          Full Name (पूरा नाम बैंक खाते के अनुसार)*
+        </label>
+
+        <input
+          id="full-name"
+          name="full_name"
+          class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md"
+          placeholder="बैंक या UPI खाते में दर्ज आधिकारिक नाम"
+          required
+          type="text"
+        />
+      </div>
+
+
+      <!-- Mobile & Date -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+        <!-- Mobile -->
+        <div>
+          <label class="block font-title-md text-body-sm text-on-surface mb-1">
+            Mobile Number (मोबाइल नंबर)*
+          </label>
+
+          <input
+            id="mobile"
+            name="mobile"
+            class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md"
+            placeholder="10-digit mobile number"
+            pattern="[0-9]{10}"
+            maxlength="10"
+            required
+            type="tel"
+          />
+        </div>
+
+        <!-- Payment Date -->
+        <div>
+          <label class="block font-title-md text-body-sm text-on-surface mb-1">
+            Payment Date (भुगतान की तारीख)*
+          </label>
+
+          <input
+            id="payment-date"
+            name="payment_date"
+            class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md text-on-surface"
+            required
+            type="date"
+          />
+        </div>
+
+      </div>
+
+
+      <!-- Complete Address -->
+      <div>
+        <label class="block font-title-md text-body-sm text-on-surface mb-1">
+          Complete Address (पूर्ण स्थायी पता)*
+        </label>
+
+        <input
+          id="address"
+          name="address"
+          class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md"
+          placeholder="मकान सं., गली/ग्राम, मोहल्ला"
+          required
+          type="text"
+        />
+      </div>
+
+
+      <!-- State, District, PIN -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+        <!-- State -->
+        <div>
+          <label class="block font-title-md text-body-sm text-on-surface mb-1">
+            State (राज्य)*
+          </label>
+
+          <input
+            id="state"
+            name="state"
+            class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md"
+            placeholder="उदा. मध्य प्रदेश"
+            required
+            type="text"
+          />
+        </div>
+
+
+        <!-- District -->
+        <div>
+          <label class="block font-title-md text-body-sm text-on-surface mb-1">
+            District (जिला)*
+          </label>
+
+          <input
+            id="district"
+            name="district"
+            class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md"
+            placeholder="उदा. सतना"
+            required
+            type="text"
+          />
+        </div>
+
+
+        <!-- PIN -->
+        <div>
+          <label class="block font-title-md text-body-sm text-on-surface mb-1">
+            PIN Code (पिन कोड)*
+          </label>
+
+          <input
+            id="pin"
+            name="pin"
+            class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md"
+            pattern="[0-9]{6}"
+            maxlength="6"
+            placeholder="6-अंक पिन"
+            required
+            type="text"
+          />
+        </div>
+
+      </div>
+
+
+      <!-- Contribution Amount -->
+      <div>
+
+        <label class="block font-title-md text-body-sm text-on-surface mb-2">
+          Contribution Amount (सहयोग राशि)*
+        </label>
+
+        <!-- Quick Amount Buttons -->
+        <div class="grid grid-cols-3 sm:grid-cols-5 gap-2 mb-3">
+
+          <button
+            type="button"
+            onclick="setAmount(100)"
+            class="py-2 text-center rounded bg-background hover:bg-saffron-tint hover:text-primary font-bold text-body-md transition-colors">
+            ₹100
+          </button>
+
+          <button
+            type="button"
+            onclick="setAmount(500)"
+            class="py-2 text-center rounded bg-background hover:bg-saffron-tint hover:text-primary font-bold text-body-md transition-colors">
+            ₹500
+          </button>
+
+          <button
+            type="button"
+            onclick="setAmount(1000)"
+            class="py-2 text-center rounded bg-saffron-tint text-primary font-bold text-body-md transition-colors">
+            ₹1000
+          </button>
+
+          <button
+            type="button"
+            onclick="setAmount(2100)"
+            class="py-2 text-center rounded bg-background hover:bg-saffron-tint hover:text-primary font-bold text-body-md transition-colors">
+            ₹2100
+          </button>
+
+          <button
+            type="button"
+            onclick="setAmount(5000)"
+            class="py-2 text-center rounded bg-background hover:bg-saffron-tint hover:text-primary font-bold text-body-md transition-colors">
+            ₹5000
+          </button>
+
+        </div>
+
+
+        <!-- Custom Amount -->
+        <input
+          id="amount-input"
+          name="amount"
+          class="w-full h-12 px-3.5 bg-background rounded focus:ring-2 focus:ring-primary text-body-md font-bold"
+          min="50"
+          placeholder="अन्य राशि प्रविष्ट करें (₹)"
+          required
+          type="number"
+          value="1000"
+        />
+
+      </div>
+
+
+      <!-- Disclaimer -->
+      <div class="bg-background p-4 rounded space-y-3 text-body-sm text-on-surface-variant">
+
+        <p class="font-bold text-on-surface">
+          "मैं पुष्टि करता/करती हूँ कि यह योगदान मैं अपनी स्वेच्छा से,
+          बिना किसी दबाव या बाध्यता के दे रहा/रही हूँ। मैं स्वीकार करता/करती हूँ
+          कि भुगतान संबंधी जानकारी सही है।"
+        </p>
+
+
+        <div class="flex items-center gap-6 pt-1">
+
+          <label class="flex items-center gap-2 cursor-pointer font-title-md text-on-surface">
+
+            <input
+              class="w-4 h-4 text-primary focus:ring-primary"
+              name="voluntary-consent"
+              value="yes"
+              required
+              type="radio"
+            />
+
+            <span>हाँ, मैं सहमत हूँ</span>
+
+          </label>
+
+
+          <label class="flex items-center gap-2 cursor-pointer font-title-md text-on-surface">
+
+            <input
+              class="w-4 h-4 text-primary focus:ring-primary"
+              name="voluntary-consent"
+              value="no"
+              type="radio"
+            />
+
+            <span>नहीं, मैं सहमत नहीं हूँ</span>
+
+          </label>
+
+        </div>
+
+      </div>
+
+
+      <!-- Submit -->
+      <button
+        class="w-full bg-deep-navy-dark hover:bg-secondary text-on-primary font-label-action text-label-action py-3.5 rounded transition-all shadow-md flex items-center justify-center gap-2"
+        type="submit"
+      >
+
+        <i class="fa-solid fa-paper-plane text-base"></i>
+
+        <span>
+          Submit Form (फॉर्म सबमिट करें)
+        </span>
+
+      </button>
+
+    </form>
+
+  </div>
 <!-- QR Code & Official Banking Credentials Column -->
 <div class="lg:col-span-5 space-y-6" id="upi-qr-card">
 <!-- UPI QR Card -->

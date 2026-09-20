@@ -613,3 +613,41 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
       });
+
+/* ============================================
+   CONTRIBUTION FORM → GOOGLE FORM
+============================================= */
+
+function setAmount(amount) {
+  const amountInput = document.getElementById("amount-input");
+
+  if (amountInput) {
+    amountInput.value = amount;
+  }
+}
+
+
+// function openGoogleForm(event) {
+
+//   event.preventDefault();
+
+//   const form = document.getElementById("contribution-form");
+
+//   if (!form) {
+//     console.error("Contribution form not found.");
+//     return;
+//   }
+
+//   // Check required fields
+//   if (!form.checkValidity()) {
+//     form.reportValidity();
+//     return;
+//   }
+
+//   // Your Google Form
+//   const googleFormURL =
+//     "https://forms.gle/EykxuR6adShG21Qq8";
+
+//   // Open Google Form
+//   window.open(googleFormURL, "_blank");
+}
