@@ -627,27 +627,27 @@ function setAmount(amount) {
 }
 
 
-function openGoogleForm(event) {
+// function openGoogleForm(event) {
 
-  event.preventDefault();
+//   event.preventDefault();
 
-  const form = document.getElementById("contribution-form");
+//   const form = document.getElementById("contribution-form");
 
-  if (!form) {
-    console.error("Contribution form not found.");
-    return;
-  }
+//   if (!form) {
+//     console.error("Contribution form not found.");
+//     return;
+//   }
 
-  // Check required fields
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
+//   // Check required fields
+//   if (!form.checkValidity()) {
+//     form.reportValidity();
+//     return;
+//   }
 
-  // Your Google Form
-  const googleFormURL =
-    "https://forms.gle/EykxuR6adShG21Qq8";
+//   // Your Google Form
+//   const googleFormURL =
+//     "https://forms.gle/EykxuR6adShG21Qq8";
 
-  // Open Google Form
-  window.open(googleFormURL, "_blank");
+//   // Open Google Form
+//   window.open(googleFormURL, "_blank");
 }
